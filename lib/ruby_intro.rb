@@ -11,7 +11,16 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  total = 0
+  if arr.size == 0
+    return total
+  elsif arr.size == 1
+    return arr[0]
+  else
+    x, y = arr.max(2)
+    total = x + y
+    return total
+  end
 end
 
 def sum_to_n? arr, n
