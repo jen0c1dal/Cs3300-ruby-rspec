@@ -7,7 +7,7 @@ def sum arr
   for value in arr do
     total += value
   end
-  value
+  total
 end
 
 def max_2_sum arr
