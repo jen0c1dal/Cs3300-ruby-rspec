@@ -36,8 +36,8 @@ def sum_to_n? arr, n
         end
         j += 1
       end
-      return false
     end
+    return false
   end
 end
 
