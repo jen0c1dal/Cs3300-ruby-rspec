@@ -24,7 +24,20 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.size < 2
+    return false
+  else
+    for i in 0..arr.size do
+      j = i + 1
+      until j == arr.size
+        if i + j == n
+          return true
+        end
+        j += 1
+      end
+    end
+    return false
+  end
 end
 
 # Part 2
