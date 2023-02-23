@@ -31,7 +31,7 @@ def sum_to_n? arr, n
     for i in 0..m do
       j = i + 1
       until j == m
-        if (arr[i] + arr[j]) == n
+        if arr[i] + arr[j] == n
           return true
         end
         j += 1
