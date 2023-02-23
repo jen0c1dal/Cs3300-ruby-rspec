@@ -51,15 +51,22 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.index(/[b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z]/) == 0
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.match?(/^[01]+$/) && s.end_with? "100"
+    return true
+  end
+  return false
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
 end
