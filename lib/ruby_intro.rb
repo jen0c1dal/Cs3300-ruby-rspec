@@ -31,7 +31,8 @@ def sum_to_n? arr, n
     for i in 0..m do
       j = i + 1
       until j == m
-        if arr[i] + arr[j] == n
+        a, b = arr[i], arr[j]
+        if a.+(b) == n
           return true
         end
         j += 1
@@ -44,7 +45,9 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  str = 'Hello, '
+  str.concat(name)
+  return str.to_s
 end
 
 def starts_with_consonant? s
