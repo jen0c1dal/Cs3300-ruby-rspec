@@ -27,9 +27,10 @@ def sum_to_n? arr, n
   if arr.size < 2
     return false
   else
-    for i in 0..arr.size do
+    m = arr.size
+    for i in 0..m do
       j = i + 1
-      until j == arr.size
+      until j == m
         if i + j == n
           return true
         end
