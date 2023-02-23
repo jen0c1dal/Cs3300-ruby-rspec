@@ -3,7 +3,11 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  total = 0
+  for value in arr do
+    total += value
+  end
+  value
 end
 
 def max_2_sum arr
