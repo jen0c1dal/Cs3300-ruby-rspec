@@ -3,17 +3,25 @@
 require_relative '../lib/ruby_intro'
 
 describe 'Ruby intro part 1' do
+  # Test the function sum
   describe '#sum' do
-
+    # String following 'it' is displayed if the test fails to aid in locating the part of the code that isn't working
     it 'returns correct sum [1 point]', points: 1 do
+      # Verify that the output of the function is a member of the integer class
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
+      # Verify that the sum function does the addition math correctly
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
+      # Verify that the sum function can add negative numbers correctly
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
+      # Verify that the sum function can output negative numbers as well as positive ones
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
 
+    # String following 'it' is displayed if any of the tests before the 'end' fail
     it 'works on the empty array [2 points]', points: 2 do
+      # Verifies that running the function with only an empty array as an argument doesn't break the function
       expect { sum([]) }.not_to raise_error
+      # Verify that passing the function an empty array as a parameter returns a result of 0
       expect(sum([])).to be_zero
     end
   end
