@@ -27,12 +27,11 @@ def sum_to_n? arr, n
   if arr.size < 2
     return false
   else
-    m = arr.size
-    for i in 0..m do
+    m = arr.size - 1
+    for i in 0..m
       j = i + 1
-      until j == m
-        a, b = arr[i], arr[j]
-        if a.+(b) == n
+      while j <= m
+        if arr[i] + arr[j] == n
           return true
         end
         j += 1
@@ -58,8 +57,9 @@ def starts_with_consonant? s
   end
 end
 
+
 def binary_multiple_of_4? s
-  if s.match?(/^[01]+$/) && s.end_with? "100"
+  if ((s.match?(/^[01]+$/)) && !((s.end_with? "1") || (s.end_with? "11")))
     return true
   end
   return false
@@ -72,12 +72,10 @@ class BookInStock
   attr_accessor :isbn, :price
 
   def initialize(isbn, price)
-    if isbn = "" || price <= 0
-      raise ArgumentError
-    else
-      @isbn = isbn
-      @price = price
-    end
+    raise ArgumentError.new("ISBN cannot be blank") if isbn.empty?
+    raise ArgumentError.new("Price must be greater than 0") if price <= 0
+    @isbn = isbn
+    @price = price
   end
 
   def price_as_string
